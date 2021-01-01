@@ -1,0 +1,35 @@
+
+<div class="hero">
+  {{ 'img_hero_1.png' | asset_url | img_tag }}
+</div>
+   
+<h2>bbbbbbbb</h2>
+<p>
+  {{ section.settings.text-box }}
+</p>
+<p>{{ 'liale.top.about' | t }}</p>
+
+
+
+
+  
+<style>
+  .hero img {width:100%;}
+</style>
+
+{% schema %}
+{
+  "name": "Text Box",
+  "settings": [
+    {
+      "id": "text-box",
+      "type": "text",
+      "label": "Heading",
+      "default": {
+        "ja": "aaセクションにコンテンツを追加するには、HTMLとLiquidタグをファイルの一番上に記述します。Liquidタグはスキーマで定義することができ、テーマエディターでのカスタマイズが可能になります。スキーマ設定に追加できるさまざまな値については、開発者向けドキュメントに詳細があります。" ,
+        "en": "aaaaa" 
+      }
+    }
+  ]
+}
+{% endschema %}

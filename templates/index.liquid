@@ -1,1 +1,22 @@
-{{ content_for_index }}
+<!-- https://artscope-dev.myshopify.com/?_ab=0&_fd=0&_sc=1&key=c700f1326e8330c9d5d9e84d58e910bfdf9f149c6aee3cc267c58aec32e71812  -->
+
+
+
+{% section '0-custom-index-section' %}
+
+<div style="background: #fff;">
+{{  content_for_index }} 
+</div>
+
+
+
+{% for collection in collections %}
+    {% for product in collection.products limit: 4%}
+
+      {{ product.title }}<br>
+      {{ product.url }}<br><br>
+
+    {% endfor %}
+{% endfor %}
+
+<img src="{{ 'img_top_under.png' | asset_url }}"/ style="width:100%;">
