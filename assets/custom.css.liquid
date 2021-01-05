@@ -1,3 +1,23 @@
+/* ==========================================================================
+   theme.cssのリセット/上書き
+   ========================================================================== */
+
+body.template-index .site-footer {
+  margin-top:0;
+}
+
+.l-footer.site-footer {
+  background-color: #000;
+}
+
+.l-footer .disclosure__toggle {
+  /* background: none; */
+  /* color:#fff; */
+}
+
+.l-footer .site-footer__hr {
+  border-bottom: 1px solid #333;
+}
 
 
 
@@ -9,15 +29,19 @@
 /* Reset
    ----------------------------------------------------------------- */
 
-html, body, div, … { … }
+html, body, div {}
 
 /* Base
   ----------------------------------------------------------------- */
 
-body { … }
+body { }
 
 html body {
   /* background-color : #000; */
+  font-family: Hiragino Mincho Pro;
+}
+
+html body p, h1, h2, h3, h4, h5 {
   font-family: Hiragino Mincho Pro;
 }
 
@@ -38,11 +62,21 @@ html body {
   color:  #fff;
 }
 
+ .l-header .mobile-nav a {
+  color:  #333;
+}
+
+
+
 .l-header .site-header {
   background-color: #000;
 }
 .l-header .site-header .site-header__mobile-nav {
   background-color: #000;
+}
+
+.l-footer {
+  background:#000;
 }
 
 
@@ -58,6 +92,48 @@ html body {
 
 /* Component
   ----------------------------------------------------------------- */
+/* 
+.c-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 0.8em;
+  border: 1px solid #ddd;
+  padding: 0.8em;
+  margin: 0 0 2em;
+}
+
+.c-grid > div {
+  background: #ddd;
+  overflow: auto;
+  min-width: 0;
+  padding: 1em;
+} */
+
+/* 【CSS】世にも簡単なレスポンシブの1カラム2カラムの書き方 | JavaScriptに関するお知らせ https://jsnotice.com/posts/2020-05-09/ */
+.c-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-right: 12px  * -1;
+  margin-bottom: 12px * -2;
+  margin-left: 12px  * -1;
+}
+.c-grid_item {
+  margin-bottom: 12px * 2;
+  padding-right: 12px;
+  padding-left: 12px;
+  width: 100%;
+}
+
+@media (min-width: 750px) {
+  .c-grid_item__m__3 {
+    width: calc(100% / 3);
+  }
+  .c-grid_item__m__4 {
+    width: calc(100% / 4);
+  }
+}
 
 /**
 * Button
@@ -67,7 +143,6 @@ html body {
 
 .c-btn { … }
 .c-btn--primary {
-  ...
 }
 
 /**
@@ -76,7 +151,6 @@ html body {
 
 .c-media { … }
 .c-media__image {
-  ...
 }
 
 /* Project
@@ -94,6 +168,25 @@ html body {
   ...
 }
 
+
+.p-footer__links__wrapper {
+  width:100%;
+text-align: center;
+}
+.p-footer__links__wrapper ul {
+  /* text-align: center; */
+  /* margin: 0 auto; */
+}
+
+.p-footer__links__wrapper li {
+  display: inline;
+  padding: 0 5px;
+}
+.p-footer__links__wrapper li a{
+  color: #fff;
+  font-size:14px;
+}
+
 /* Utility
   ----------------------------------------------------------------- */
 
@@ -101,8 +194,10 @@ html body {
 * Clearfix
 */
 
-.u-clearfix {
-  ...
+.u-clearfix::after {
+    content: " ";
+    display: block;
+    clear: both;
 }
 
 html body .u-main-content-no-padding {

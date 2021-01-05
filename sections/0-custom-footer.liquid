@@ -137,28 +137,27 @@
   {%- endif -%}
 {%- endcapture -%}
 
-<footer class="site-footer critical-hidden" role="contentinfo" data-section-id="{{ section.id }}" data-section-type="footer-section">
+<footer class="l-footer site-footer critical-hidden" role="contentinfo" data-section-id="{{ section.id }}" data-section-type="footer-section">
   <div class="page-width">
     <div class="site-footer__content">
+      <div class="p-footer__links__wrapper">
+        <ul>
+          <li><a href="{{ routes.account_login_url }}">ログイン</a></li>
+          <li><a href="{{ routes.account_login_url }}">会員登録</a></li>
+        </ul>
+        <ul>
+          <li><a href="{{ pages.about }}">ABOUT</a></li>
+          <li><a href="{{ blogs.journal.url }}">JOURNAL</a></li>
+          <li><a href="{{ collections.all.url }}">STORE</a></li>
+          <li><a href="{{ pages.contact.url }}">CONTACT</a></li>
+        </ul>
 
-      
-      <ul>
-        <li><a href="{{ pages.terms-of-service.url }}">ログイン</a></li>
-        <li><a href="{{ pages.privacy-policy.url }}">会員登録</a></li>
-      </ul>
-      <br>
-      <ul>
-        <li><a href="{{ pages.terms-of-service.url }}">ABOUT</a></li>
-        <li><a href="{{ pages.privacy-policy.url }}">JOURNAL</a></li>
-        <li><a href="{{ pages.tokushoho.url }}">STORE</a></li>
-        <li><a href="{{ pages.contact.url }}">CONTACT</a></li>
-      </ul>
-      <br>
-      <ul>
-        <li><a href="{{ pages.terms-of-service.url }}">利用規約</a></li>
-        <li><a href="{{ pages.privacy-policy.url }}">プライバシーポリシー</a> </li>
-        <li><a href="{{ pages.tokushoho.url }}">特定商取引法に関する記載</a></li>
-      </ul>
+        <ul>
+          <li><a href="{{ pages.terms-of-service.url }}">利用規約</a></li>
+          <li><a href="{{ pages.privacy-policy.url }}">プライバシーポリシー</a> </li>
+          <li><a href="{{ pages.tokushoho.url }}">特定商取引法に関する記載</a></li>
+        </ul>
+      </div>
 
       <!-- {%- for block in section.blocks -%}
 
@@ -311,7 +310,7 @@
         <div class="grid__item small--hide {{ payment_width_class }} {% if show_payment_icons %}site-footer-item-center-vertically{% endif %}">{{ payment_icon_markup }}</div>
       {%- endif -%}
 
-      <div class="grid__item {% if show_selectors or show_payment_icons %}one-half{% endif %} small--one-whole site-footer-item-tall">
+      <!-- <div class="grid__item {% if show_selectors or show_payment_icons %}one-half{% endif %} small--one-whole site-footer-item-tall">
         {%- if social_icons -%}
           <ul class="list--inline site-footer__social-icons social-icons site-footer__icon-list">
             {%- for social in socials -%}
@@ -342,7 +341,7 @@
             <small class="site-footer__copyright-content site-footer__copyright-content-powered-by">{{ powered_by_link }}</small>
           </div>
         {%- endif -%}
-      </div>
+      </div> -->
 
       {%- if show_selectors -%}
         <div class="grid__item small--hide {{ payment_width_class }}">{{ payment_icon_markup }}</div>

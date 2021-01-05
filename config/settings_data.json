@@ -123,13 +123,14 @@
       }
     },
     "content_for_index": [
-      "hero-1",
-      "feature-row",
-      "feature-columns",
-      "collection",
-      "hero-2",
-      "quotes",
-      "image-bar"
+      "0-custom-featured-blog"
+      // "hero-1",
+      // "feature-row",
+      // "feature-columns",
+      // "collection",
+      // "hero-2",
+      // "quotes",
+      // "image-bar"
     ]
   },
   "presets": {
@@ -257,13 +258,14 @@
         }
       },
       "content_for_index": [
-        "hero-1",
-        "feature-row",
-        "feature-columns",
-        "collection",
-        "hero-2",
-        "quotes",
-        "image-bar"
+        "0-custom-featured-blog"
+        // "hero-1",
+        // "feature-row",
+        // "feature-columns",
+        // "collection",
+        // "hero-2",
+        // "quotes",
+        // "image-bar"
       ]
     },
     "Light": {
@@ -504,13 +506,14 @@
         }
       },
       "content_for_index": [
-        "hero",
-        "featured-collections",
-        "slideshow",
-        "1492033924902",
-        "1492096252560",
-        "1492033877875",
-        "1492033809691"
+        "0-custom-featured-blog"
+        // "hero",
+        // "featured-collections",
+        // "slideshow",
+        // "1492033924902",
+        // "1492096252560",
+        // "1492033877875",
+        // "1492033809691"
       ]
     }
   }
