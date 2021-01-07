@@ -19,6 +19,7 @@
   </div>
 </article>
 
+
 {% if blog.comments_enabled? %}
   {% if number_of_comments > 0 %}
     <hr aria-hidden="true">
@@ -133,12 +134,14 @@
   </div>
 {% endif %}
 
+{% section '0-custom-contact-button' %}
 <div class="text-center return-link-wrapper page-width">
   <a href="{{ blog.url }}" class="btn btn--secondary btn--has-icon-before">
     {% include 'icon-arrow-left' %}
     {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
   </a>
 </div>
+
 
 <script type="application/ld+json">
 {

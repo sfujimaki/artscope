@@ -18,11 +18,11 @@
 
           <div class="grid grid--half-gutters">
             <div class="grid__item medium-up--one-half">
-              <label for="{{ formId }}-name">{{ 'contact.form.name' | t }}</label>
-              <input type="text" id="{{ formId }}-name" name="contact[{{ 'contact.form.name' | t }}]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+              <label for="{{ formId }}-name">{{ 'liale.contact.form.name' | t }}</label>
+              <input type="text" id="{{ formId }}-name" name="contact[{{ 'liale.contact.form.name' | t }}]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
             </div>
             <div class="grid__item medium-up--one-half">
-              <label for="{{ formId }}-email">{{ 'contact.form.email' | t }} <span aria-hidden="true">*</span></label>
+              <label for="{{ formId }}-email">{{ 'liale.contact.form.email' | t }} <span aria-hidden="true">*</span></label>
               <input
                 type="email"
                 id="{{ formId }}-email"
@@ -47,11 +47,18 @@
             </div>
           </div>
 
-          <label for="{{ formId }}-phone">{{ 'contact.form.phone' | t }}</label>
-          <input type="tel" id="{{ formId }}-phone" name="contact[{{ 'contact.form.phone' | t }}]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+          <label for="{{ formId }}-phone">{{ 'liale.contact.form.phone' | t }}</label>
+          <input type="tel" id="{{ formId }}-phone" name="contact[{{ 'liale.contact.form.phone' | t }}]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
 
-          <label for="{{ formId }}-message">{{ 'contact.form.message' | t }}</label>
-          <textarea rows="10" id="{{ formId }}-message" name="contact[{{ 'contact.form.message' | t }}]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+          <label for="{{ formId }}-country">{{ 'liale.contact.form.country' | t }}</label>
+          <input type="text" id="{{ formId }}-country" name="contact[{{ 'liale.contact.form.country' | t }}]"  value="{% if form[country] %}{{ form[country] }} {%endif %}">
+
+          <label for="{{ formId }}-country">{{ 'liale.contact.form.address' | t }}</label>
+          <input type="text" id="{{ formId }}-country" name="contact[{{ 'liale.contact.form.address' | t }}]"  value="{% if form[country] %}{{ form[country] }} {%endif %}">
+
+
+          <label for="{{ formId }}-message">{{ 'liale.contact.form.message' | t }}</label>
+          <textarea rows="10" id="{{ formId }}-message" name="contact[{{ 'liale.contact.form.message' | t }}]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
           <input type="submit" class="btn" value="{{ 'contact.form.submit' | t }}">
 

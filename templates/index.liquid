@@ -12,60 +12,71 @@
 <div class="p-front-articles">
   <div class="page-width">
     <h2 class="p-front-articles__heading">JOURNAL</h2>
-    {% for blog in blogs.journal.articles %}
+    {% for article in blogs.journal.articles %}
       {% if forloop.first == true %}
       <div class="c-grid">
-        <div class="c-grid_item"> 
-          <div class="p-front-articles__article p-front-articles__article__first">
-            <img src="{{ blog.image | img_url: "original" }}"/>
+      <a href="{{article.url}}"></a>
+        <div class="c-grid_item ">   
+
+
+          <div class="p-front-articles__article p-front-articles__article__first u-linkbox">
+
+            <img src="{{ article.image | img_url: "original" }}"/>
             <div class="p-front-articles__article__box">
-              <h3>{{ blog.title }}</h3>
+              <h3>{{ article.title}}</h3>
+              <p>{{article.published_at | date: "%Y.%-m.%-d" }}</p>
             </div>
+            <a href="{{article.url}}"></a>
           </div>
           <div class="u-clearfix"></div>
         </div>
+
       </div>
         <div class="c-grid">
       {% else %}
+
         <div class="c-grid_item c-grid_item__m__3"> 
-          <div class="p-front-articles__article p-front-articles__article__not-first">
-            <img src="{{ blog.image | img_url: "original" }}"/>
+
+          <div class="p-front-articles__article p-front-articles__article__not-first u-linkbox">
+
+            <img src="{{ article.image | img_url: "original" }}"/>
             <div class="p-front-articles__article__box">
-              <h3>{{ blog.title }}</h3>
+              <h3>{{ article.title }}</h3>
+              <p>{{article.published_at | date: "%Y.%-m.%-d" }}</p>
             </div>
+            <a href="{{article.url}}"></a>
           </div>
         </div>
       {% endif %}
     {% endfor %}
       </div>
     <div class="u-clearfix"></div>
-    <div class="p-front-articles__other_button c-ghost-button">
-      <a href="{{ blogs.journal.url }}">OTHER ITEMS&nbsp;&nbsp;></a>
-    </div>
+
+      <a class="c-ghost-button c-ghost-button--white" href="{{ blogs.journal.url }}">VIEW MORE&nbsp;&nbsp;></a>
   </div>
 </div>
 
 <div class="p-front-products">
   <div class="page-width">
   <h2 class="p-front-products__heading">STORE</h2>
-  <div class="c-grid">
+  <div class="c-grid p-front-products__grid">
     {% for product in collections.all.products limit: 4 %}
-      <div class="c-grid_item c-grid_item__m__4"> 
-        <div class="p-front-products__product">
+      <div class="c-grid_item c-grid_item__m__4 p-front-products__item"> 
+        <div class="p-front-products__product u-linkbox">
           <div class="p-front-products__product__image-wrapper">
           <img src="{{ product.featured_image | img_url:  'original', crop: 'center'}}"/>
+          
         </div>
 
           <h3>{{ product.title }}</h3>
-        <span>価格: {{ product.price | money }}</span>
+        <span>{{ product.price | money }}</span>
+        <a href="{{product.url}}"></a>
         </div>
       </div>
     {% endfor %}
   </div>  
   <div class="u-clearfix"></div>
-  <div class="p-front-products__other_button c-ghost-button">
-    <a href="{{ collections.all.url }}">OTHER ITEMS&nbsp;&nbsp;></a>
-  </div>
+    <a class="c-ghost-button" href="{{ collections.all.url }}">VIEW MORE&nbsp;&nbsp;></a>
   </div>
 </div>
 
@@ -91,7 +102,7 @@
     object-fit: cover; 
   }
 
-  @media (min-width: 750px) {
+  @media (min-width: 768px) {
     .p-hero img {
     height:880px;
     }
@@ -99,47 +110,60 @@
   
   .p-front-articles {
     background:#181818,;
-    padding:40px;
+    padding-bottom:40px;
+    /* padding:40px 0;  */
   }
   .p-front-articles  .p-front-articles__heading {
+    font-size:30px;
     text-align: center;
     color: #FFFFFF;
+    padding:80px 0 60px;
+    
   }
 
-  .c-ghost-button {
-    width:300px;
-    padding: 20px 0;
-    text-align: center;
-    border: solid 1px #000;
-    display: block;
-    margin: 30px auto;
 
-  }
   
 
   .p-front-products {
     background:#fff;
     /* margin-bottom:20px; */
-    padding:40px;
+    /* padding:40px 0;  */
+    padding-bottom:40px;
   }
+
+
 
   .p-front-products .p-front-products__heading {
     text-align: center;
+    font-size:30px;
+    padding:80px 0 60px;
   }
 
-  .p-front-products .p-front-products__other_button {
+  @media (max-width: 767px) {
+    .p-front-products__grid{
+      width:100%;
+      overflow-x: auto;
+        white-space: nowrap;
+        /* -webkit-overflow-scrolling: touch; */
+        display:inline-block;
+        overflow-x:scroll;
 
+    }
+
+    .p-front-products .p-front-products__item{
+      width:45%;
+      display: inline-block;
+      vertical-align: top;
+    }
   }
-
-
   .p-front-articles__article.p-front-articles__article__first {
     width:100%;
     float:left;
-    margin-bottom:60px;
+    /* margin-bottom:60px; */
   }
   .p-front-articles__article.p-front-articles__article__first > img {
     width:100%;
-    height: 30vw;
+    height: 40vw;
     object-fit: cover;
     margin:0;
   }
@@ -152,15 +176,25 @@
   }
 
   .p-front-articles__article .p-front-articles__article__box {
-    width:100%;
+    width:80%;
+    margin: 0 auto;
+    /* position:relative; */
+    margin-top: -100px;
+    right:10px;
     /* height:30px; */
-    background:#fff;  
+    /* background:#fff;   */
+    background:rgba(255,255,255,0.9);
     padding:20px;
-    margin:0px;
-    float:left; 
-    z-index:10;
-    display: inline-block;
+
+    float:right; 
+    /* z-index:10; */
+    /* display: inline-block; */
+
     position: relative;
+  }
+
+  .p-front-articles__article .p-front-articles__article__box h3 {
+    font-size:20px;
   }
 
   .p-front-articles__article.p-front-articles__article__not-first  img {
@@ -172,12 +206,21 @@
     margin:0;
   }
 
-  .p-front-articles  .p-front-articles__other_button {
-    border-color: #fff;
+  @media (max-width: 768px) {
+
+    .p-front-articles__article.p-front-articles__article__first > img {
+      height:300px; 
+    }
+    .p-front-articles__article.p-front-articles__article__not-first > img {
+      height:300px; 
+    }
+    .p-front-articles__article .p-front-articles__article__box h3 {
+      font-size:15px;
+    }
   }
-  .p-front-articles  .p-front-articles__other_button  a {
-    color: #fff;
-  }
+
+  
+
 
   .p-front-products .p-front-products__product__image-wrapper {
     /* サイズがバラバラな画像をレスポンシブで縦横比を揃えて表示させる - Qiita https://qiita.com/becolomochi/items/265a7f940a1c809f5ba7 */
@@ -186,8 +229,18 @@
     padding-top: 140%; /* 比率 */
   }
 
+  .p-front-products__product h3 {
+    font-size:15px;
+
+  }
+  .p-front-products__product,   .p-front-products__product h3 {
+    font-family: Hiragino Kaku Gothic;
+
+  }
   .p-front-products .p-front-products__product h3 {
-    margin
+    margin-top:10px;
+    white-space:normal;
+    font-size:15px;
   }
 
   .p-front-products .p-front-products__product  img {

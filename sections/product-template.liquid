@@ -215,6 +215,7 @@
                 {%- if section.settings.enable_payment_button %} product-form__item--payment-button {%- endif -%}
                 {%- if product.has_only_default_variant %} product-form__item--no-variants {%- endif -%}"
               >
+         
                 <button type="submit" name="add"
                   {% unless current_variant.available %} aria-disabled="true"{% endunless %}
                   aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
@@ -233,8 +234,9 @@
                   </span>
                 </button>
                 {% if section.settings.enable_payment_button %}
-                  {{ form | payment_button }}
-                {% endif %}
+                {{ form | payment_button }}
+              {% endif %}
+    
               </div>
             </div>
           {% endform %}
@@ -271,9 +273,11 @@
           {{ product.description }}
         </div>
 
+        {% comment %}
         {% if section.settings.show_share_buttons %}
           {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
         {% endif %}
+        {% endcomment %}
     </div>
   </div>
 </div>

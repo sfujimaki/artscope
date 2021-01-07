@@ -57,23 +57,15 @@
           </a>
 
           <div class="article__grid-meta{% if article.image %} article__grid-meta--has-image{% endif %}">
-            {% if section.settings.blog_show_author %}
-              <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
-            {% endif %}
+
 
             {% if section.settings.blog_show_date %}
               <span class="article__date">
-                {{ article.published_at | time_tag: format: 'date' }}
+                {{ article.published_at | date: "%Y.%-m.%-d"  }}
               </span>
             {% endif %}
 
-            <div class="rte article__grid-excerpt">
-              {% if article.excerpt.size > 0 %}
-                {{ article.excerpt }}
-              {% else %}
-                {{ article.content | strip_html | truncate: 150 }}
-              {% endif %}
-            </div>
+     
 
             {% if article.tags.size > 0 %}
               <div class="article__tags rte">
@@ -87,21 +79,7 @@
               </div>
             {% endif %}
 
-            <ul class="list--inline article__meta-buttons">
-              <li>
-                <a href="{{ article.url }}" class="btn btn--tertiary btn--small" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
-                  {{ 'blogs.article.read_more' | t }}
-                </a>
-              </li>
-
-              {% if blog.comments_enabled? and article.comments_count > 0 %}
-                <li>
-                  <a href="{{ article.url }}#comments" class="article__comment-count btn btn--tertiary btn--small">
-                    {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
-                  </a>
-                </li>
-              {% endif %}
-            </ul>
+           
           </div>
         </li>
       {% endfor %}
@@ -116,13 +94,11 @@
             <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
               <div class="article-listing">
                 <h2 class="article__title h3"><a href="{{ article.url }}">{{ article.title }}</a></h2>
-                {% if section.settings.blog_show_author %}
-                  <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
-                {% endif %}
+
 
                 {% if section.settings.blog_show_date %}
                   <span class="article__date">
-                    {{ article.published_at | time_tag: format: 'date' }}
+                    {{ article.published_at | date: "%Y.%-m.%-d"  }}
                   </span>
                 {% endif %}
 
@@ -154,13 +130,6 @@
                   </noscript>
                 {% endif %}
 
-                <div class="rte">
-                  {% if article.excerpt.size > 0 %}
-                    {{ article.excerpt }}
-                  {% else %}
-                    {{ article.content | strip_html | truncate: 150 }}
-                  {% endif %}
-                </div>
 
                 {% if article.tags.size > 0 %}
                   <div class="article__tags article__tags--list rte">
@@ -171,21 +140,7 @@
                   </div>
                 {% endif %}
 
-                <ul class="list--inline article__meta-buttons">
-                  <li>
-                    <a href="{{ article.url }}" class="btn btn--tertiary btn--small" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
-                      {{ 'blogs.article.read_more' | t }}
-                    </a>
-                  </li>
-
-                  {% if blog.comments_enabled? and article.comments_count > 0 %}
-                    <li>
-                      <a href="{{ article.url }}#comments" class="article__comment-count btn btn--tertiary btn--small">
-                        {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
-                      </a>
-                    </li>
-                  {% endif %}
-                </ul>
+               
               </div>
             </div>
           </div>

@@ -1,25 +1,30 @@
-<div class="section-header text-center">
-  <h1 class="article__title" id="title-0">{{ article.title }}</h1>
-  {% if section.settings.blog_show_author %}
-    <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
-  {% endif %}
-
+<div class="p-article">
+<div class="section-header">
   {% if section.settings.blog_show_date %}
-    <span class="article__date">
-      {{ article.published_at | time_tag: format: 'date' }}
-    </span>
-  {% endif %}
+  <span class="p-article__date">
+    {{ article.published_at | date: "%Y.%-m.%-d"  }}
+  </span>
+{% endif %}
+  <h1 class="p-article__title" id="title-0">{{ article.title }}</h1>
+
+
+
 </div>
 
 <div class="rte">
+  <div class="p-article__content">
   {{ article.content }}
+  </div>
 </div>
 
+
+{% comment %}
 {% if section.settings.show_share_buttons %}
   {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
 {% endif %}
+{%endcomment%}
 
-
+</div>
 
 {% schema %}
 {

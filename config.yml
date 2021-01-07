@@ -1,4 +1,9 @@
 development:
   password: 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
+  theme_id: "117367701654"
+  store: artscope-dev.myshopify.com
+production:
+  password: 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
   theme_id: "117156479126"
   store: artscope-dev.myshopify.com
+  

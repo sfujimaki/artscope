@@ -1,11 +1,22 @@
 {
   "liale": {
+    "common": {
+      "contact_button": "Contact LIALE"
+    },
     "top": {
       "about": "aaaaaaaaaaaaaa"
     },
     "about": {
       "heading": "Artless craft tea & coffee is a ‘tea.",
-      "comment_html": "artless craft tea & coffee is a ‘tea & coffee stand’ that aims to synthesise the unique aesthetics of Japan with artisanal craft goods.With a focus on ‘craft’, we provide single origin coffees from small farms known as micro-mills. Through a carefully calibrated hand dripping process, we deliver the singular stories of each coffee, one cup at a time. Our roasted Japanese teas are brewed using organic and pesticide-free tea leaves, and prepared in a Tokoname ware tea pot. Come and enjoy an exquisite cup of tea & coffee."
+      "comment_html": "",
+      "corporate_name_header": "Corporate Name",
+      "corporate_name_data": "Art Tokyo Association",
+      "established_header": "Established", 
+      "established_data": "May 1st, 2015", 
+      "corporate_hadquarters_header": "Corporate Headquarters", 
+      "corporate_hadquarters_data": "Iikuradai Bldg. 4F, 1-9-12 Azabudai, Minato-ku, Tokyo 106-0041 Japan", 
+      "representative_header": "Representative", 
+      "representative_data": "Naohiko Kishi"
     }
   },
   "general": {

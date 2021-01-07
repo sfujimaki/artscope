@@ -17,7 +17,7 @@
 {% endif %}
 
 {% include 'search-drawer' %}
-<div class="l-header" data-section-id="{{ section.id }}" data-section-type="header-section" data-header-section>
+<div class="l-header{% if template.name == "index"%} l-header--front{%endif%}" data-section-id="{{ section.id }}" data-section-type="header-section" data-header-section>
   {% if section.settings.message %}
     {% if section.settings.home_page_only == false or request.page_type == 'index' %}
       <style>
@@ -54,8 +54,106 @@
 
     {% endif %}
   {% endif %}
-  
+<!--   
+  <div style="width:100%; background: #ccc;">
+    {{ shop_locale.primary }}
+    {{ request.locale.iso_code }}
+    {% assign request_locale_downcase = request.locale.iso_code | downcase %}
 
+    {% assign locale_with_slash = "/" | append: request_locale_downcase %}
+    {% assign request_path_without_locale = request.path | remove: locale_with_slash %}
+
+    {{ request_path_without_locale }} 
+
+  </div> -->
+    {% comment %}
+  <header class="l-header">
+    <div class="l-header__site_name">
+      <a href="{{ routes.root_url }}"><img src="{{ 'img_logo.png' | asset_url }}""/></a>
+      {{ request.locale.iso_code }}
+      
+      <select name="{{ request.locale.iso_code }}" onChange="location.href=value;">
+        {% for locale in shop.published_locales %}
+          {% if locale.iso_code == "ja"%}
+            <option value="https://liale.net/" {% if locale.iso_code == request.locale.iso_code%}selected{%endif%}> {{ locale.iso_code }}</option>
+          {% else %}
+          
+            <option value="https://liale.net/{{ locale.iso_code}}"{% if locale.iso_code == request.locale.iso_code%}selected{%endif%}> {{ locale.iso_code }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    
+      <select name="{{ request.locale.iso_code }}" onChange="location.href=value;">
+        <!-- <option value="#"> {{ request.locale.iso_code }}</option> -->
+        {% for locale in shop.published_locales %}
+          {% if locale.iso_code == "ja"%}
+            <option value="https://liale.net/{{request_path_without_locale}}" {% if locale.iso_code == request.locale.iso_code%}selected{%endif%}> {{ locale.iso_code }}</option>
+          {% else %}
+          
+            <option value="https://liale.net/{{ locale.iso_code | append: request_path_without_locale}}"{% if locale.iso_code == request.locale.iso_code%}selected{%endif%}> {{ locale.iso_code }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+
+
+       
+
+    </div>
+  </header>
+        {% endcomment %}
+
+
+  <header class="">
+    <div class="inner">
+        <div id="mobile-head">
+          <div class="l-header__site_name">
+            <a href="{{ routes.root_url }}"><img src="{{ 'img_logo.png' | asset_url }}""/></a>
+          </div>
+          <div id="nav-toggle">
+              <div>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+          </div>
+        </div>
+        <nav id="global-nav">
+            <ul>
+
+                <li><a href="{{ pages.about.url }}">ABOUT</a></li>
+                <li><a href="{{ blogs.journal.url }}">JOURNAL</a></li>
+                <li><a href="{{ collections.all.url }}">STORE</a></li>
+                <li><a href="{{ pages.contact.url }}">CONTACT</a></li>
+                <li><a href="{{ routes.cart_url }}"">CART</a></li>
+                <li><a href="{{ routes.account_login_url }}">LOGIN</a></li>
+                <li>
+                  <div class="l-header__language_select__wrapper">
+        
+                    <select name="{{ request.locale.iso_code }}" onChange="location.href=value;">
+                      {% for locale in shop.published_locales %}
+                        {% if locale.iso_code == "zh-CN"%}
+                          <option value="https://liale.net/{{ locale.iso_code}}"{% if locale.iso_code == request.locale.iso_code%}selected{%endif%}>Lang : CN</option>
+                        {% elsif  locale.iso_code == "en"%}
+                          <option value="https://liale.net/{{ locale.iso_code}}"{% if locale.iso_code == request.locale.iso_code%}selected{%endif%}>Lang : EN</option>
+                        {% else %}
+                           <option value="https://liale.net/" {% if locale.iso_code == request.locale.iso_code%}selected{%endif%}>言語 : JP</option>
+                        {% endif %}
+                      {% endfor %}
+                    </select>
+  
+                  </div>
+                </li>
+            </ul>
+            <!-- <ul>
+
+          </ul> -->
+
+        </nav>
+        
+    </div>
+</header>
+
+<div style="display:none;">
 <header class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
     <div class="grid grid--no-gutters grid--table site-header__mobile-nav">
       {% if section.settings.align_logo == 'center' %}
@@ -254,7 +352,7 @@
   </nav>
   {% endif %}
 </div>
-
+</div>
 
 
 

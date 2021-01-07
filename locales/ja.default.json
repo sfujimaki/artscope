@@ -1,11 +1,32 @@
 {
   "liale": {
+    "common": {
+      "contact_button": "お問い合わせ"
+    },
     "top": {
       "about": "ああああああああああああああああ"
     },
     "about": {
       "heading": "もっと上質なアートを身近に",
-      "comment_html": "LIALEは、古美術・工芸から、日本画・近代美術・現代アートまで、幅広い作品のアートが展示されるフェアとして、2005年から開催している、日本最大級の国際的なアートフェアです。アートフェア東京の前身は、1992年にパシフィコ横浜で始まったNippon International Contemporary Art Fair (NICAF)で、アジア初の大規模なコンテンポラリーアートフェアとしてスタート致しました。しかし、当時の低迷する日本経済の中、2003年8回目の開催でNICAFとしての幕を閉じることとなりました。2005年、古美術から現代アートまでの多様な美術商・ギャラリーを中心とした「アートフェア東京」が東京国際フォーラムを会場として始動。"
+      "comment_html": "",
+      "corporate_name_header": "法人名",
+      "corporate_name_data": "一般社団法人 アート東京",
+      "established_header": "創立", 
+      "established_data": "2015年5月1日", 
+      "corporate_hadquarters_header": "本社", 
+      "corporate_hadquarters_data": "〒106-0041 東京都港区麻布台1-9-12 飯倉台ビル4階", 
+      "representative_header": "代表者", 
+      "representative_data": "來住 尚彦"
+    },
+    "contact": {
+      "form": {
+        "name": "Name",
+        "email": "E-mail",
+        "country": "Country",
+        "phone": "TEL",
+        "address": "Address",
+        "message": "Message"
+      }
     }
   },
   "general": {

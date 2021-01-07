@@ -1,10 +1,14 @@
 <div class="page-width">
+  {%comment%}
   {% if section.settings.title != blank %}
     <div class="section-header text-center">
       <h2>{{ section.settings.title | escape }}</h2>
     </div>
   {% endif %}
-
+  {%endcomment%}
+  <div class="section-header text-center">  
+    <h2>STORE</h2>
+  </div>
   {% case section.settings.grid %}
     {% when 2 %}
       {%- assign grid_item_width = 'medium-up--one-half' -%}

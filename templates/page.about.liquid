@@ -2,43 +2,39 @@
   <img src="{{ 'img_about_cover.png' | asset_url }}"/ style="width:100%;">
 </div>
 <div class="page-width">
-  <div class="grid">
-    <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
-      <div class="section-header text-center">
-        <h1>{{ 'liale.about.heading' | t }}</h1>
+  <div class="p-about">
+    <div class="c-grid">
+      <div class="c-grid_item c-grid_item__m__2">
+        <div class="p-about__logo_area">
+          <div class="p-about__logo_area__inner">
+           <img src="{{ 'img_logo.png' | asset_url }}""/>
+          </div>
+        </div>
       </div>
-
-      <div class="rte">
-        {{ 'liale.about.comment_html' | t }}
+      <div class="c-grid_item c-grid_item__m__2">
+          {{page.content}}
       </div>
+    </div>
+    <div class="p-about__company_information">
+      <table class="">
+        <tr>
+          <th>{{ 'liale.about.corporate_name_header' | t }}</th>
+          <td>{{ 'liale.about.corporate_name_data' | t }}</td>
+        </tr>
+        <tr>
+          <th>{{ 'liale.about.established_header' | t }}</th>
+          <td>{{ 'liale.about.established_data' | t }}</td>
+        </tr>
+        <tr>
+          <th>{{ 'liale.about.corporate_hadquarters_header' | t }}</th>
+          <td>{{ 'liale.about.corporate_hadquarters_data' | t }}</td>
+        </tr>
+        <tr>
+          <th>{{ 'liale.about.representative_header' | t }}</th>
+          <td>{{ 'liale.about.representative_data' | t }}</td>
+        </tr>
+      </table>      
     </div>
   </div>
 </div>
 
-
-<div class="grid grid--no-gutters small--text-center grid--footer-float-right">
-<div class="grid__item one-half small--one-whole">
-{%- form 'localization', class: 'selectors-form', data-disclosure-form: '' -%}
-  <div class="selectors-form__item">
-    <h2 class="visually-hidden" id="lang-heading">
-      {{ 'general.language.dropdown_label' | t }}
-    </h2>
-    <div class="disclosure" data-disclosure-locale>
-      <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="lang-list" aria-describedby="lang-heading" data-disclosure-toggle>
-        {{ form.current_locale.endonym_name }}
-      </button>
-      <ul id="lang-list" class="disclosure-list" data-disclosure-list>
-        {% for locale in form.available_locales %}
-          <li class="disclosure-list__item {% if locale.iso_code == form.current_locale.iso_code %}disclosure-list__item--current{% endif %}">
-            <a class="disclosure-list__option" href="#" lang="{{ locale.iso_code }}" {% if locale.iso_code == form.current_locale.iso_code %}aria-current="true"{% endif %} data-value="{{ locale.iso_code }}" data-disclosure-option>
-              {{ locale.endonym_name }}
-            </a>
-          </li>
-        {%- endfor -%}
-      </ul>
-      <input type="hidden" name="locale_code" id="LocaleSelector" value="{{ form.current_locale.iso_code }}" data-disclosure-input/>
-    </div>
-  </div>
-{%- endform -%}
-</div>
-</div>

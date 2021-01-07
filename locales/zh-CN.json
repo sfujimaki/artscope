@@ -1,11 +1,22 @@
 {
   "liale": {
+    "common": {
+      "contact_button": "Contact LIALE"
+    },
     "top": {
       "about": "aaaaaaaaaaaaaa"
     },
     "about": {
       "heading": "中国語例文中国語例文",
-      "comment_html": "中国語例文中国語例文<br>中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文中国語例文"
+      "comment_html": "",
+      "corporate_name_header": "Corporate Name",
+      "corporate_name_data": "Art Tokyo Association",
+      "established_header": "Established", 
+      "established_data": "May 1st, 2015", 
+      "corporate_hadquarters_header": "Corporate Headquarters", 
+      "corporate_hadquarters_data": "Iikuradai Bldg. 4F, 1-9-12 Azabudai, Minato-ku, Tokyo 106-0041 Japan", 
+      "representative_header": "Representative", 
+      "representative_data": "Naohiko Kishi"
     }
   },  
   "general": {

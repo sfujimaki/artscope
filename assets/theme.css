@@ -1158,7 +1158,7 @@ select,
     font-size: 16px; } }
 
 /*================ Headings ================*/
-h3, .h3,
+/* h3, .h3,
 h4,
 .h4,
 h5,
@@ -1219,7 +1219,7 @@ h6,
     
     h6,
     .h6 {
-      font-size: calc(((var(--font-h6-mobile)) / (var(--font-size-base))) * 1em); } }
+      font-size: calc(((var(--font-h6-mobile)) / (var(--font-size-base))) * 1em); } } */
 
 /*================ RTE headings ================*/
 .rte {
