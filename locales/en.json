@@ -4,7 +4,7 @@
       "contact_button": "Contact LIALE"
     },
     "top": {
-      "about": "aaaaaaaaaaaaaa"
+      "about": ""
     },
     "about": {
       "heading": "Artless craft tea & coffee is a ‘tea.",
@@ -17,6 +17,9 @@
       "corporate_hadquarters_data": "Iikuradai Bldg. 4F, 1-9-12 Azabudai, Minato-ku, Tokyo 106-0041 Japan", 
       "representative_header": "Representative", 
       "representative_data": "Naohiko Kishi"
+    },
+    "product": {
+      "back_link" : "Back" 
     }
   },
   "general": {

@@ -27,6 +27,9 @@
         "address": "Address",
         "message": "Message"
       }
+    },
+    "product": {
+      "back_link" : "商品一覧へ戻る" 
     }
   },
   "general": {
