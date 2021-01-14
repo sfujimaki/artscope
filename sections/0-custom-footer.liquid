@@ -146,19 +146,20 @@
           <li><a href="{{ routes.account_register_url }}">SIGN UP</a></li>
         </ul>
         <ul>
-          <li><a href="{{ page.about }}">ABOUT</a></li>
+          <li><a href="{{ pages.about.url }}">ABOUT</a></li>
           <li><a href="{{ blogs.journal.url }}">JOURNAL</a></li>
           <li><a href="{{ collections.all.url }}">STORE</a></li>
           <li><a href="{{ pages.contact.url }}">CONTACT</a></li>
         </ul>
 
-        <ul>
           <li><a href="{{ pages.terms.url }}">TERMS</a></li>
           <li><a href="{{ pages.privacy_policy.url }}">PRIVACY POLICY</a> </li>
-          {% if request.locale.iso_code == "ja" %}
-          <li><a href="{{ pages.commercial_transaction_act.url }}">特定商取引法に関する記載</a></li>
-          {% endif %}
         </ul>
+        {% if request.locale.iso_code == "ja" %}
+        <ul>
+          <li><a href="{{ pages.commercial_transaction_act.url }}">特定商取引法に関する記載</a></li>
+       </ul>
+        {% endif %}
       </div>
 
       <!-- {%- for block in section.blocks -%}
