@@ -6,13 +6,13 @@
 {% section 'product-recommendations' %}
 
 {% if collection %}
-  <div class="return-link-wrapper page-width p-product__back-link__wrapper ">
+  <div class="page-width c-page__back-link__wrapper">
     <a href="{{ collection.url }}">
       &lt;&nbsp;&nbsp;&nbsp;{{ 'products.product.back_to_collection' | t: title: collection.title }}
     </a>
   </div>
 {% else %}
-  <div class="return-link-wrapper page-width p-product__back-link__wrapper">
+  <div class="page-width c-page__back-link__wrapper">
     <a href="{{ collections.all.url }}">
       &lt;&nbsp;&nbsp;&nbsp;{{ 'liale.product.back_link' | t }}
     </a>

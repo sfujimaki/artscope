@@ -3,6 +3,9 @@
     "common": {
       "contact_button": "お問い合わせ"
     },
+    "article": {
+      "contact_button": "作品について問い合わせる"
+    },
     "top": {
       "about": "ああああああああああああああああ"
     },

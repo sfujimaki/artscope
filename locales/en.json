@@ -3,6 +3,9 @@
     "common": {
       "contact_button": "Contact LIALE"
     },
+    "article": {
+      "contact_button": "Contact"
+    },
     "top": {
       "about": ""
     },

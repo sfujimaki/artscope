@@ -135,10 +135,10 @@
 {% endif %}
 
 {% section '0-custom-contact-button' %}
-<div class="text-center return-link-wrapper page-width">
-  <a href="{{ blog.url }}" class="btn btn--secondary btn--has-icon-before">
-    {% include 'icon-arrow-left' %}
-    {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
+
+<div class="page-width c-page__back-link__wrapper">
+  <a href="{{ blog.url }}">
+    &lt;&nbsp;&nbsp;&nbsp;{{ 'blogs.article.back_to_blog' | t: title: blog.title }}
   </a>
 </div>
 

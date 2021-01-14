@@ -3,8 +3,11 @@
     "common": {
       "contact_button": "Contact LIALE"
     },
+    "article": {
+      "contact_button": "Contact"
+    },
     "top": {
-      "about": "aaaaaaaaaaaaaa"
+      "about": ""
     },
     "about": {
       "heading": "中国語例文中国語例文",

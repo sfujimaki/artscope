@@ -58,12 +58,20 @@ body { }
 html body {
   /* background-color : #000; */
   font-family: Hiragino Mincho Pro;
+  /* font-family: serif,  */
 }
 
 html body p, h1, h2, h3, h4, h5, select, option {
   font-family: Hiragino Mincho Pro;
+  /* font-family: serif,  */
 }
 
+html body.u-lang__zh-CN {
+  font-family: serif, "Microsoft YaHei", "微软雅黑",'SimSun';
+}
+.u-lang__zh-CN p, .u-lang__zh-CN h1, .u-lang__zh-CN h2, .u-lang__zh-CN h3, .u-lang__zh-CN h4, .u-lang__zh-CN h5, .u-lang__zh-CN select, .u-lang__zh-CN option, .u-lang__zh-CN blockquote   {
+  font-family: serif, "Microsoft YaHei", "微软雅黑",'SimSun';
+}
 
 /* ==========================================================================
   Layout
@@ -227,6 +235,14 @@ a.c-ghost-button:hover {
 } */
 
 
+.c-page__back-link__wrapper {
+  padding-top: 50px;
+}
+
+.c-page__back-link__wrapper a {
+  font-family: Hiragino Kaku Gothic;
+}
+
 /**
 * Button
 *
@@ -320,9 +336,7 @@ a.c-ghost-button:hover {
   }
   
 
-  .p-product__back-link__wrapper a {
-    font-family: Hiragino Kaku Gothic;
-  }
+
 
 /**
 
@@ -370,6 +384,13 @@ a.c-ghost-button:hover {
   margin: 40px auto;
   display: block;
 }
+
+
+.p-article__footer__contact__area {
+  font-family: Hiragino Kaku Gothic;
+}
+
+
 .p-about {
   padding-top: 50px;
 }
@@ -381,6 +402,7 @@ a.c-ghost-button:hover {
   margin-top:100px;
 
 }
+
 
 .p-about__company_information {
 
