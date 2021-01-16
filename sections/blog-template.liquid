@@ -25,7 +25,7 @@
   <div class="page-width">
     <ul class="grid grid--uniform grid--blog">
       {% for article in blog.articles %}
-        <li class="grid__item medium-up--one-third">
+        <li class="grid__item medium-up--one-third p-blog__list__item">
           <a href="{{ article.url }}" class="article__link">
             {% if article.image %}
               {% capture img_id %}ArticleImage-{{ article.image.id }}{% endcapture %}
@@ -33,7 +33,7 @@
               {%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
               {% include 'image-style', image: article.image, height: 345, wrapper_id: img_wrapper_id, img_id: img_id %}
-              <div id="{{ img_wrapper_id }}" class="article__grid-image-wrapper js">
+              <div id="{{  img_wrapper_id }}" class="article__grid-image-wrapper js">
                 <div class="article__grid-image-container" style="padding-top:{{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;" data-image-loading-animation>
                   <img id="{{ img_id }}"
                       class="article__grid-image lazyload"
@@ -109,9 +109,9 @@
 
                   {% include 'image-style', image: article.image, height: 600, wrapper_id: img_wrapper_id, img_id: img_id %}
 
-                  <div id="{{ img_wrapper_id }}" class="article__list-image-wrapper js">
+                  <div id="" class="article__list-image-wrapper js">
                     <a href="{{ article.url }}" style="padding-top:{{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;" class="article__list-image-container" data-image-loading-animation>
-                      <img id="{{ img_id }}"
+                      <img id=""
                            class="article__list-image lazyload"
                            data-src="{{ img_url }}"
                            data-widths="[180, 360, 540, 720, 905, 1090, 1296, 1512, 1728, 2048]"

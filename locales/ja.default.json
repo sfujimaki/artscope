@@ -7,7 +7,7 @@
       "contact_button": "作品について問い合わせる"
     },
     "top": {
-      "about": "ああああああああああああああああ"
+      "about": ""
     },
     "about": {
       "heading": "もっと上質なアートを身近に",
@@ -24,7 +24,7 @@
     "contact": {
       "form": {
         "name": "Name",
-        "email": "E-mail",
+        "email": "Email",
         "country": "Country",
         "phone": "TEL",
         "address": "Address",

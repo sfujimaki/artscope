@@ -22,7 +22,10 @@
     {% include 'image-style', image: preview_image, height: max_height, wrapper_id: wrapper_id, img_id: img_id %}
   {% endunless %}
 <!-- aa -->
-<img src="{{ product.featured_image | img_url:  'original', crop: 'center'}}"/ style="width:100%; height:auto;">
+<div class="p_products_item_image__wrapper ">
+<img src="{{ product.featured_image | img_url:  'original', crop: 'center'}}" class="p_products_item_image"/>
+</div>
+{% comment %}
   <!-- <div class="product-card__image-with-placeholder-wrapper" data-image-loading-animation>
     <div id="{{ wrapper_id }}" class="grid-view-item__image-wrapper product-card__image-wrapper js">
       <div style="padding-top:{% unless preview_image == blank %}{{ 1 | divided_by: preview_image.aspect_ratio | times: 100 }}%{% else %}100%{% endunless %};">
@@ -38,13 +41,14 @@
     </div>
   </div> -->
 
+  {% endcomment %}
   <noscript>
     {% capture image_size %}{{ max_height }}x{{ max_height }}{% endcapture %}
     <img class="grid-view-item__image" src="{{ preview_image | img_url: image_size, scale: 2 }}" alt="{{ preview_image.alt }}" style="max-width: {{ max_height | times: preview_image.aspect_ratio }}px;">
   </noscript>
+  <div class="p_products_item_image__information">
+    <div class="h4 grid-view-item__title product-card__title" aria-hidden="true">{{ product.title }}</div>
 
-  <div class="h4 grid-view-item__title product-card__title" aria-hidden="true">{{ product.title }}</div>
-
-  {% include 'product-price-listing', product: product, show_vendor: show_vendor %}
-
+    {% include 'product-price-listing', product: product, show_vendor: show_vendor %}
+  </div>
 </div>
